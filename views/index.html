@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+</head>
+<body>
+<form method="POST" action="/grxxqy">
+<input type=text name="p" autofocus/><br><br><button>搜索</button>
+</form>
+{{if .info}}
+<br><br>
+<script>
+    var info = "{{str2html .info}}";
+    try {
+        var jdata = JSON.stringify(JSON.parse(info), null, 4);
+        //jdata = jdata.replace(/\,\s+/g,",");
+        document.write("<pre>"+jdata+"</pre>");
+    } catch(e) {
+        console.log(e)
+        document.write("<p>"+info+"<p>");
+    }
+</script>
+{{end}}
+<body>
+</html>
